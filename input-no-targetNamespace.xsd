@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  XML schema WO target namespace -->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="Fond">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="gem"
+						 type="Gem" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+
+<xsd:complexType name="Gem">
+	<xsd:sequence>
+		<xsd:element name="name" type="Name"/>
+		<xsd:element name="preciousness" type="Preciousness"/>
+		<xsd:element name="origin" type="Origin"/>
+		<xsd:element name="parameters" type="VisualParam"/>
+		<xsd:element name="value" type="Value"/>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="VisualParam">
+	<xsd:all>
+		<xsd:element name="color" type="Color" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="transparency" type="RestrictedPercentage" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="cut" type="Cut" minOccurs="0" maxOccurs="1"/>
+	</xsd:all>
+</xsd:complexType>
+
+<xsd:simpleType name="Percent">
+	<xsd:restriction base="xsd:int">
+		<xsd:minInclusive value="0"/>
+		<xsd:maxInclusive value="100"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="RestrictedPercentage">
+	<xsd:restriction base="xsd:decimal">
+		<xsd:minInclusive value="0"/>
+		<xsd:maxInclusive value="1"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Cut">
+	<xsd:restriction base="xsd:int">
+		<xsd:minInclusive value="4"/>
+		<xsd:maxInclusive value="15"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Value">
+	<xsd:restriction base="xsd:decimal">
+		<xsd:minInclusive value="0"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Color" final="restriction" >
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="green" />
+		<xsd:enumeration value="red" />
+		<xsd:enumeration value="blue" />
+		<xsd:enumeration value="violet" />
+		<xsd:enumeration value="white" />
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Preciousness" final="restriction">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="драгоценный" />
+		<xsd:enumeration value="полудрагоценный" />
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Name">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[A-Z][a-z]+"/>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="Origin">
+	<xsd:restriction base="xsd:string">
+		<xsd:pattern value="[A-Z].+"/>
+	</xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>

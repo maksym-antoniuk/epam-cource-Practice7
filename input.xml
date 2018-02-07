@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Input XML document. This XML is valid against Test.xsd XML schema-->
+
+<st3:Fond xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xmlns:st3="http://nure.ua/antoniuk/SummaryTask3/entity"
+		  xsi:schemaLocation="http://nure.ua/antoniuk/SummaryTask3/entity input.xsd">
+
+	<gem>
+		<name>Rubin</name>
+		<preciousness>драгоценный</preciousness>
+		<origin>Ukraine, Kharkiv</origin>
+		<parameters>
+			<color>red</color>
+            <cut>4</cut>
+            <transparency>0.1</transparency>
+		</parameters>
+        <value>0.3333</value>
+	</gem>
+
+    <gem>
+		<name>Ametist</name>
+		<preciousness>драгоценный</preciousness>
+		<origin>USA, Kharkiv</origin>
+		<parameters>
+			<color>violet</color>
+            <transparency>0.7</transparency>
+		</parameters>
+        <value>0.86</value>
+	</gem>
+
+    <gem>
+		<name>Izumrud</name>
+		<preciousness>драгоценный</preciousness>
+		<origin>Ukraine, Lviv</origin>
+		<parameters>
+			<color>green</color>
+            <cut>11</cut>
+		</parameters>
+        <value>1.4</value>
+	</gem>
+
+    <gem>
+		<name>Saphir</name>
+		<preciousness>полудрагоценный</preciousness>
+		<origin>Germany, Frankfurt</origin>
+		<parameters>
+			<color>violet</color>
+            <cut>7</cut>
+            <transparency>0.9</transparency>
+		</parameters>
+        <value>0.788</value>
+	</gem>
+</st3:Fond>
